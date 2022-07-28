@@ -11,7 +11,7 @@ namespace EmploymentScreening
         /// </summary>
         /// <param name="candidates"></param>
         /// <param name="reference"></param>
-        /// <returns>Always returns a valid Dictionary of counts</returns>
+        /// <returns>Always returns a Json object of counts (i.e. a string)</returns>
         public static string AboveBelow(List<int> candidates, int reference)
         {
             Dictionary<string, int> comparator = new Dictionary<string, int>();
@@ -45,8 +45,7 @@ namespace EmploymentScreening
         public static string StringRotation(string originalString, int offset)
         {
             if (String.IsNullOrEmpty(originalString)) return string.Empty;
-            if (offset <= 0) return originalString;
-            if (offset >= originalString.Length) return originalString;
+            if (offset <= 0 || offset >= originalString.Length) return originalString;
 
             string segmentToRotate = string.Empty;
             int segmentIndex = 0;
