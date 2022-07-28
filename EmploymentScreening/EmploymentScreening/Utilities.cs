@@ -15,8 +15,7 @@ namespace EmploymentScreening
         public static string AboveBelow(List<int> candidates, int reference)
         {
             Dictionary<string, int> comparator = new Dictionary<string, int>();
-            int above = 0;
-            int below = 0;
+            int above = 0, below = 0;
 
             if (candidates != null)
                 foreach (int candidate in candidates)
