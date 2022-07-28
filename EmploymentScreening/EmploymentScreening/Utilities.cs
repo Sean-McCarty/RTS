@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.Json;
 
 namespace EmploymentScreening
 {
@@ -11,7 +12,7 @@ namespace EmploymentScreening
         /// <param name="candidates"></param>
         /// <param name="reference"></param>
         /// <returns>Always returns a valid Dictionary of counts</returns>
-        public static Dictionary<string, int> AboveBelow(List<int> candidates, int reference)
+        public static string AboveBelow(List<int> candidates, int reference)
         {
             Dictionary<string, int> comparator = new Dictionary<string, int>();
             int above = 0;
@@ -28,7 +29,7 @@ namespace EmploymentScreening
             comparator.Add("above", above);
             comparator.Add("below", below);
 
-            return comparator;
+            return JsonSerializer.Serialize(comparator, new JsonSerializerOptions());
         }
 
         /// <summary>

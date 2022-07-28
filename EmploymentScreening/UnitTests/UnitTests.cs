@@ -13,7 +13,7 @@ namespace EmploymentScreening.UnitTests
             int reference = 7;
 
             // Act
-            Dictionary<string, int> comparisons = Utilities.AboveBelow(candidates, reference);
+            Dictionary<string, int> comparisons = JsonSerializer.Deserialize<Dictionary<string, int>>(Utilities.AboveBelow(candidates, reference));
 
             //Assert
             Assert.AreEqual(0, comparisons["above"]);
@@ -28,7 +28,7 @@ namespace EmploymentScreening.UnitTests
             int reference = 7;
 
             // Act
-            Dictionary<string, int> comparisons = Utilities.AboveBelow(candidates, reference);
+            Dictionary<string, int> comparisons = JsonSerializer.Deserialize<Dictionary<string, int>>(Utilities.AboveBelow(candidates, reference));
 
             //Assert
             Assert.AreEqual(0, comparisons["above"]);
@@ -43,7 +43,7 @@ namespace EmploymentScreening.UnitTests
             int reference = 7;
 
             // Act
-            Dictionary<string, int> comparisons = Utilities.AboveBelow(candidates, reference);
+            Dictionary<string, int> comparisons = JsonSerializer.Deserialize<Dictionary<string, int>>(Utilities.AboveBelow(candidates, reference));
 
             //Assert
             Assert.AreEqual(0, comparisons["above"]);
@@ -59,7 +59,7 @@ namespace EmploymentScreening.UnitTests
             Dictionary<string, int> expected = new Dictionary<string, int>() { { "above", 3 }, { "below", 5 } };
 
             // Act
-            Dictionary<string, int> comparisons = Utilities.AboveBelow(candidates, reference);
+            Dictionary<string, int> comparisons = JsonSerializer.Deserialize<Dictionary<string, int>>(Utilities.AboveBelow(candidates, reference));
 
             //Assert
             Assert.AreEqual(expected["above"], comparisons["above"]);
