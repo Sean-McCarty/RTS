@@ -29,7 +29,7 @@ namespace EmploymentScreening
             comparator.Add("above", above);
             comparator.Add("below", below);
 
-            return JsonSerializer.Serialize(comparator, new JsonSerializerOptions());
+            return JsonSerializer.Serialize(comparator);
         }
 
         /// <summary>
